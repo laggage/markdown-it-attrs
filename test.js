@@ -409,9 +409,9 @@ function describeTestsWithOptions(options, postText) {
     });
 
     it('should not support <p>', () => {
-      md = Md().use(attrs, Object.assign({ allowedAttributes: [/^(class|attr)$/] }, Object.assign({}, options, { disableParagraphBlock: true })));
-      src = '{"foo": false}\n## test {.test}';
-      expected = '<p>{&quot;foo&quot;: false}</p>\n<h2 class="test">test</h2>\n';
+      md = Md().use(attrs, Object.assign({ allowedAttributes: [] }, Object.assign({}, options, { disableParagraphBlock: true })));
+      src = replaceDelimiters('{"foo": false}\n## test {.test}', options);
+      expected = replaceDelimiters('<p>{&quot;foo&quot;: false}</p>\n<h2 class="test">test</h2>\n', options);
       const rendered = md.render(src);
       assert.equal(rendered, expected);
     });
