@@ -4,7 +4,7 @@
   "description": "Add classes, identifiers and attributes to your markdown with {} curly brackets, similar to pandoc's header attributes",
   "main": "index.js",
   "license": "MIT",
-  "repository": "arve0/markdown-it-attrs",
+  "repository": "cnblogs/markdown-it-attrs",
   "author": {
     "name": "Arve Seljebu",
     "email": "arve.seljebu@gmail.com",
@@ -51,5 +51,14 @@
   "peerDependencies": {
     "markdown-it": ">= 9.0.0"
   },
-  "tonicExampleFilename": "demo.js"
+  "tonicExampleFilename": "demo.js",
+  "files": [
+    "index.js",
+    "patterns.js",
+    "utils.js",
+    "markdown-it-attrs.browser.js",
+    "package.json",
+    "READMD.md",
+    "LICENSE"
+  ]
 }

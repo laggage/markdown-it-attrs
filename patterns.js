@@ -326,6 +326,7 @@ module.exports = options => {
         let ii = i + 1;
         while (tokens[ii + 1] && tokens[ii + 1].nesting === -1) { ii++; }
         const openingToken = utils.getMatchingOpeningToken(tokens, ii);
+        if (options.disableParagraphBlock && openingToken.type === 'paragraph_open') return;
         utils.addAttrs(attrs, openingToken);
         const trimmed = content.slice(0, content.lastIndexOf(options.leftDelimiter));
         token.content = last(trimmed) !== ' ' ?
