@@ -5,7 +5,8 @@ const patternsConfig = require('./patterns.js');
 const defaultOptions = {
   leftDelimiter: '{',
   rightDelimiter: '}',
-  allowedAttributes: []
+  allowedAttributes: [],
+  disableParagraphBlock: false
 };
 
 module.exports = function attributes(md, options_) {

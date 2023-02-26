@@ -407,6 +407,14 @@ function describeTestsWithOptions(options, postText) {
       expected = replaceDelimiters('<p><img src="https://example.com/image.jpg" alt="" class="" height="100" width=""></p>\n', options);
       assert.equal(md.render(replaceDelimiters(src, options)), expected);
     });
+
+    it('should not support <p>', () => {
+      md = Md().use(attrs, Object.assign({ allowedAttributes: [/^(class|attr)$/] }, Object.assign({}, options, { disableParagraphBlock: true })));
+      src = '{"foo": false}\n## test {.test}';
+      expected = '<p>{&quot;foo&quot;: false}</p>\n<h2 class="test">test</h2>\n';
+      const rendered = md.render(src);
+      assert.equal(rendered, expected);
+    });
   });
 }
 
