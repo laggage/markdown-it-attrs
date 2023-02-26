@@ -15,5 +15,7 @@ jobs:
       with:
           node-version: 18.x
           cache: 'npm'
+    - name: Installing dependencies
+      run: npm ci
     - name: Publish
       run: ./publish.sh ${GITHUB_REF#refs/*/}
